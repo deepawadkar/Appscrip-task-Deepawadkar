@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            min-width: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+       .card{
+            width: 500px;
+            box-shadow: 0px 0px 10px #ccc;
+            padding: 30px;
+            margin: 10px;
+         }
+     .header{
+            box-shadow: 0 0 10px #ccc;
+            padding: 2px;
+        }
+    /* .header  img{
+        width: 200px;
+     } */
+        .card h4{
+            font-size: 1.3vw;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.5;
+            font-weight: 500;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+   <div class="header">
+    <img src="https://media.licdn.com/dms/image/C560BAQG40GZnwtGDlA/company-logo_200_200/0/1677563426470/be_practical_logo?e=2147483647&v=beta&t=NOdTGxz_VYMvUuI9T5id5tx_I7Tzf3ZanuHhD61V9K0" alt="">
+    </div>
+    <div id="container">
+   </div>
+    
+       
+        
+   
+    </div>
+    <script>
+        var content = document.querySelector('#container')
+         var details = []
+         fetch('https://stormy-flannel-nightgown-ox.cyclic.app/api/mern/list/')
+         .then(Load=>Load.json())
+         .then(data => {
+            details = data;
+            details.map((item,index)=>{
+             content.innerHTML +=`
+
+             <div class = "card">
+             <h4 style="color:red">ID  :   ${item._id}</h4>
+             <h4>EMAIL  :  ${item.email}</h4>
+             <h4>COLLEGE  :  ${item.college}</h4>
+             <h4>MOBILE  :  ${item.mobile}</h4>
+             <h4>YEAR  :  ${item.year}</h4>
+             <h4>V  :  ${item.__v}</h4>
+        </div>
+
+        `
+       })
+
+         })
+    </script>
+</body>
+</html>

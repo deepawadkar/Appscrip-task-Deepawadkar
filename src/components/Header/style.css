@@ -1,0 +1,70 @@
+.main-header{
+    border-bottom: 1px solid #ccc;
+}
+header, .icons, .toggler{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    
+}
+header i{
+    font-size: 1.3rem;
+}
+.toggler i:first-child{
+    font-size: 2rem;
+    display: none;
+}
+.toggler i:last-child{
+    font-size: 3rem;
+}
+.icons select{
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 50px;
+   
+}
+nav ul li a{
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+@media(max-width:768px){
+    .toggler i:first-child{
+        display: block;
+    }
+    nav{
+        display: none;
+    }
+    nav ul{
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .openNav{
+        display: block;
+    }
+    header i{
+        font-size: 1.1rem;
+    }
+}
+@media(max-width:576px){
+    .icons select{
+        display: none;
+    }
+    .toggler i:last-child{
+        font-size: 1.4rem;
+    }
+}
+
