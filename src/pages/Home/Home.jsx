@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 function Home() {
     const [products, setProducts] = useState([]);
-    const [openFilter, setOpenFilter] = useState(true)
+    const [openFilter, setOpenFilter] = useState(false)
     const [productType, setProductType] = useState(null)
     
     useEffect(() => {
